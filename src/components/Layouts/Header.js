@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { Badge, Container, Dropdown, Navbar } from "react-bootstrap";
 import Cart from "../cart/Cart";
+import CartContext from "../../store/CartContext";
 function Header() {
+  const ctx = useContext(CartContext);
+
+  let quantity = 0;
+  ctx.items.forEach((item) => {
+    quantity += Number(item.quantity);
+  });
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -19,7 +26,7 @@ function Header() {
               <FaCartPlus />
 
               <Badge bg="dark" text="info">
-                3
+                {quantity}
               </Badge>
             </Dropdown.Toggle>
             <Dropdown.Menu style={{ minWidth: 370 }}>

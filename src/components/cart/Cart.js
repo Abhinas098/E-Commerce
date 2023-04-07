@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import './Cart.css'
+import CartContext from "../../store/CartContext";
 import {
   Button,
   CloseButton,
@@ -10,32 +11,10 @@ import {
   Table,
 } from "react-bootstrap";
 
-const cartElements = [
-  {
-    id: "g1",
-    title: "Colors",
-    price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-    quantity: 2,
-  },
-  {
-    id: "g2",
-    title: "Black and white Colors",
-    price: 50,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-    quantity: 3,
-  },
-  {
-    id: "g3",
-    title: "Yellow and Black Colors",
-    price: 70,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-    quantity: 1,
-  },
-];
-
 const Cart = () => {
-  const items = cartElements.map((item) => (
+  const ctx = useContext(CartContext)
+  const TotalAmount = ctx.totalAmount;
+  const items = ctx.items.map((item) => (
     <CartItem
       key={item.id}
       id={item.id}
@@ -46,6 +25,7 @@ const Cart = () => {
     />
   ));
 
+  const ifItems = ctx.items.length > 0;
   return (
     <Container className='container'>
       <Row>
@@ -66,11 +46,11 @@ const Cart = () => {
           </Table>
           <div style={{ float: "right" }}>
             <span>Total-</span>
-            <span>$24.38</span>
+            <span>${TotalAmount}</span>
           </div>
           <br />
           <div >
-            <Button variant="info">Purchace</Button>
+          {ifItems && <Button variant="info">Purchace</Button>}
           </div>
         </Col>
       </Row>
