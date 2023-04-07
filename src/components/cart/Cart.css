@@ -1,0 +1,12 @@
+.cart {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 200;
+  font-size: x-large;
+}
+.container {
+  text-align: center;
+}
+.container button {
+  float: right;
+}
