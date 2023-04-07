@@ -31,6 +31,7 @@ const cartReducer = (state, action) => {
       totalAmount: updatedAmount,
     };
   }
+
   if (action.type === "REMOVE") {
     let updatedItems;
     let updatedTotalAmount;
@@ -63,7 +64,7 @@ const CartProvider = (props) => {
 
   const cartContext = {
     items: cartState.items,
-    totalAmount:cartState.totalAmount,
+    totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
   };
@@ -74,5 +75,4 @@ const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
-
 export default CartProvider;

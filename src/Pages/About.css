@@ -1,0 +1,25 @@
+.header{
+    background-color: rgb(120, 119, 117);
+    padding: 5%  ;
+    text-align: center;
+    font-family: fantasy;
+}
+.about {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.image img {
+  width: 300px;
+  float:left;
+  clip-path: circle();
+}
+.image {
+  margin: 25px auto;
+  max-width: 1000px;
+  font-size: 20px;
+}
+.text {
+  float: inline-end;
+}
