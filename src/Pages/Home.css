@@ -1,0 +1,63 @@
+.header {
+  background-color: rgb(120, 119, 117);
+  padding: 3%;
+  text-align: center;
+  font-family: fantasy;
+}
+.texts {
+  display: inline-block;
+  border: 1px solid #56ccf2;
+  padding: 15px 15px;
+  font-size: 20px;
+  margin: 10px auto;
+  cursor: pointer;
+  color: rgb(194, 209, 213);
+}
+.playIcon {
+  font-size: 50px;
+  border: 2px solid rgb(140, 222, 240);
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+}
+.Tours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+
+}
+.list {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 14px;
+}
+.list button{
+    min-width:max-content;
+    background: #56CCF2;
+    color: white;
+    border: none;
+    padding: 1px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.date{
+    width: 22% ;
+    text-align: left;
+}
+.name{
+    width:57%;
+    text-align: left;
+}
+.description{
+    width: 57%;
+    text-align:left;
+}
