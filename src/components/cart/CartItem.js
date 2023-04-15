@@ -4,6 +4,9 @@ import "./CartItem.css";
 import CartContext from "../../store/CartContext";
 
 const CartItem = (props) => {
+  let val = 0;
+  val = val + props.quantity;
+
   const ctx = useContext(CartContext);
 
   const removeItemHandler = (id) => {
@@ -22,7 +25,7 @@ const CartItem = (props) => {
       </td>
       <td>
         <div className="quantity">
-          <span>{props.quantity}</span>
+          <input type="number" min={val} placeholder={val} />
           <Button
             onClick={() => {
               removeItemHandler(props.id);

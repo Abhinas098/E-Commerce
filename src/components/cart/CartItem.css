@@ -11,17 +11,6 @@
   display: flex;
   align-items: center;
 }
-#img {
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  margin: 5%;
-}
-#img img {
-  width: 50px;
-}
 
 .price {
   display: flex;
@@ -37,4 +26,22 @@
 }
 .quantity button {
   background-color: red;
+}
+.quantity input{
+  border-width: 0cm;
+}
+
+#img {
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#img img {
+  width: 50px;
+}
+.quantity input {
+  width: 45px;
+  text-align: center;
 }

@@ -1,29 +1,40 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import Store from "./Pages/Store";
-import CartProvider from "./store/CartProvider";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import LayOut from "./components/Layouts/LayOut";
 import ContactUs from "./Pages/ContactUs";
+import ProductDetail from "./components/products/ProductDetail";
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LayOut />}>
-            <Route path="Home" element={<Home />} />
-            <Route path="About" element={<About />} />
-            <Route path="/" element={<Store />} />
-            <Route path="contact" element={<ContactUs />} />
-
+    <>
+      <LayOut>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/Store" />
           </Route>
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+          <Route path="/Home">
+            <Home />
+          </Route>
+          <Route path="/Store" exact>
+            <Store />
+          </Route>
+          <Route path="/About">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <ContactUs />
+          </Route>
+          <Route path="/Store/:id">
+            <ProductDetail />
+          </Route>
+        </Switch>
+      </LayOut>
+    </>
   );
 }
 

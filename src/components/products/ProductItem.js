@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import CartContext from "../../store/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductItem = (props) => {
   const ctx = useContext(CartContext);
@@ -11,7 +12,9 @@ const ProductItem = (props) => {
     <Row style={{ margin: "1rem" }}>
       <Col>
         <Card>
-          <Card.Img variant="top" src={props.image} alt={props.title} />
+          <Link to={`Store/${props.id}`}>
+            <Card.Img variant="top" src={props.image} alt={props.title} />
+          </Link>
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle>

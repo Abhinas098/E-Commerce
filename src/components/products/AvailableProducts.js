@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from './ProductItem'
 import './AvailableProducts.css'
 
-const productsArr = [
+export const productsArr = [
     {
         id:'l1',
         title: 'Colors',

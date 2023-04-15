@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CartItem from "./CartItem";
-import './Cart.css'
+import "./Cart.css";
 import CartContext from "../../store/CartContext";
 import {
   Button,
@@ -11,8 +11,8 @@ import {
   Table,
 } from "react-bootstrap";
 
-const Cart = () => {
-  const ctx = useContext(CartContext)
+const Cart = (props) => {
+  const ctx = useContext(CartContext);
   const TotalAmount = ctx.totalAmount;
   const items = ctx.items.map((item) => (
     <CartItem
@@ -20,17 +20,26 @@ const Cart = () => {
       id={item.id}
       title={item.title}
       price={item.price}
-      img={item.imageUrl}
+      img={item.image}
       quantity={item.quantity}
     />
   ));
 
-  const ifItems = ctx.items.length > 0;
+  const onPurchase = () => {
+    if (ctx.items.length === 0) {
+      alert("Empty Cart!");
+      props.onClose();
+    } else {
+      alert("Purchase Successful!");
+      props.onClose();
+    }
+  };
+
   return (
-    <Container className='container'>
+    <Container className="container">
       <Row>
-        <Col className='cart'>Cart</Col>
-        <CloseButton />
+        <Col className="cart">Cart</Col>
+        <CloseButton onClick={props.onClose} />
       </Row>
       <Row>
         <Col>
@@ -49,8 +58,10 @@ const Cart = () => {
             <span>${TotalAmount}</span>
           </div>
           <br />
-          <div >
-          {ifItems && <Button variant="info">Purchace</Button>}
+          <div>
+            <Button onClick={onPurchase} variant="info">
+              Purchase
+            </Button>
           </div>
         </Col>
       </Row>
