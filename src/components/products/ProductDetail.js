@@ -13,9 +13,13 @@ const ProductDetail = () => {
 
   const ctx = useContext(CartContext);
   const AddItemHandler = (e) => {
-    console.log({...product});
+    console.log({ ...product });
     ctx.addItem({ ...product, quantity: 1 });
   };
+
+  if (!product) {
+    return <p>No Product Found!</p>;
+  }
 
   const onPurchase = () => {
     alert("Purchase Successful!");

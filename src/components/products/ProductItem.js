@@ -13,7 +13,7 @@ const ProductItem = (props) => {
       <Col>
         <Card>
           <Link to={`Store/${props.id}`}>
-            <Card.Img variant="top" src={props.image} alt={props.title} />
+            <Card.Img variant="top" src={props.imageUrl} alt={props.title} />
           </Link>
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
