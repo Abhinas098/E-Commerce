@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 
 import "./App.css";
 import Store from "./Pages/Store";
@@ -13,6 +13,7 @@ import AuthForm from "./components/Auth/AuthForm";
 
 function App() {
   const ctx = useContext(AuthContext);
+  const history = useHistory();
   return (
     <>
       <LayOut>
@@ -40,7 +41,10 @@ function App() {
             <ContactUs />
           </Route>
           <Route path="/Store/:id">
-            <ProductDetail />
+            {!ctx.isLogin ? history.goBack() : <ProductDetail />}
+          </Route>
+          <Route path="*">
+            <Redirect to="./" />
           </Route>
         </Switch>
       </LayOut>
