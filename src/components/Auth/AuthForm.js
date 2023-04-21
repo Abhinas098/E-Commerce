@@ -46,6 +46,7 @@ const AuthForm = () => {
       .then((res) => {
         setIsLoading(false);
         if (res.ok) {
+          localStorage.setItem("email", enteredEail.replace(/[@.]/g, ""));
           return res.json();
         } else {
           return res.json().then((data) => {

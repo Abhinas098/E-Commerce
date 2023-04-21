@@ -43,7 +43,7 @@ function Header() {
               Logout
             </button>
           )}
-          <Dropdown onToggle={showingCart} align="end">
+          {authCtx.isLogin && (<Dropdown onToggle={showingCart} align="end">
             <Dropdown.Toggle variant="dark">
               <FaCartPlus />
               <Badge bg="dark" text="info">
@@ -55,7 +55,7 @@ function Header() {
                 <Cart onClose={hideCart}></Cart>
               </Dropdown.Menu>
             )}
-          </Dropdown>
+          </Dropdown>)}
         </Container>
       </Navbar>
     </div>

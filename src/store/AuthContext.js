@@ -20,6 +20,7 @@ export const AuthCtxProvider = (props) => {
   const logedOutHandler = () => {
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem('email')
   };
 
   const contextValue = {

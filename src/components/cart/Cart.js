@@ -17,7 +17,7 @@ const Cart = (props) => {
   const items = ctx.items.map((item) => (
     <CartItem
       key={item.id}
-      id={item.id}
+      id={item._id}
       title={item.title}
       price={item.price}
       img={item.imageUrl}
