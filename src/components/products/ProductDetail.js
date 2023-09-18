@@ -28,7 +28,7 @@ const ProductDetail = () => {
   return (
     <Container fluid="md" style={{ marginTop: "4rem" }}>
       <Row>
-        <Col md="1" sm="1">
+        <Col md="2" xs='1'>
           <Card>
             <Card.Img src={product.imageUrl} alt={product.title} />
           </Card>
@@ -41,7 +41,7 @@ const ProductDetail = () => {
           </Card>
         </Col>
 
-        <Col lg="4" sm="2">
+        <Col lg="4" sm="6">
           <Card className="d-flex p-2">
             <Card.Img
               variant="top"

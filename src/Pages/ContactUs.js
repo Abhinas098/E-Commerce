@@ -31,7 +31,8 @@ const ContactUs = () => {
     }
   };
   return (
-    <div className="container mt-5">
+    <div className="body">
+    <div className="container  w-75" style={{marginTop:'20vh'}}>
       <h2 className="mb-3">Contact Us</h2>
       <form onSubmit={onSubmit}>
         <div className="mb-2">
@@ -56,6 +57,7 @@ const ContactUs = () => {
           {form}
         </Button>
       </form>
+    </div>
     </div>
   );
 };

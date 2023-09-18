@@ -1,26 +1,19 @@
-.button {
-  font: inherit;
-  background-color: transparent;
-  border: 1px white;
-  color: green;
-  font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.header a:hover {
+a:hover,
+h6:hover {
   color: #c291e2;
   text-decoration: none;
 }
-a:link {
+a:link,
+h6 {
   text-decoration: none;
   font-weight: bold;
+  margin-top: 1%;
+  padding-right: 4%;
+  cursor: pointer;
 }
-a:visited {
+a:visited,
+h6 {
   color: green;
-}
-
-.button:hover {
-  color: #903fc6;
+  padding-top: 1%;
+  font-weight: bold;
 }

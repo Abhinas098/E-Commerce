@@ -11,14 +11,18 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom";
 import CartProvider from "./store/CartProvider";
 import { AuthCtxProvider } from "./store/AuthContext";
+import ThemeProvider from "./store/ThemeCtx";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <AuthCtxProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </AuthCtxProvider>
+    <ThemeProvider>
+      <AuthCtxProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </AuthCtxProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );

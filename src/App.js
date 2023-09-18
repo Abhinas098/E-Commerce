@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 
-import "./App.css";
 import Store from "./Pages/Store";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -20,7 +19,7 @@ function App() {
     if (ctx.isLogin) {
       const email = localStorage.getItem("email");
       fetch(
-        `https://crudcrud.com/api/1021f448eee94cd6a08d3665296f461f/${email}`
+        `https://crudcrud.com/api/76fec3acf22b4ed1804e0e1b4ddb6966/${email}`
       )
         .then((res) => {
           return res.json().then((data) => {

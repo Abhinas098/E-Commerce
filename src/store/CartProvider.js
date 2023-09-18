@@ -91,7 +91,7 @@ const CartProvider = (props) => {
   const addItemHandler = (item) => {
     const email = localStorage.getItem("email");
     fetch(
-      `https://crudcrud.com/api/1021f448eee94cd6a08d3665296f461f/${email}`,
+      `https://crudcrud.com/api/76fec3acf22b4ed1804e0e1b4ddb6966/${email}`,
       {
         method: "POST",
         body: JSON.stringify(item),
@@ -117,7 +117,7 @@ const CartProvider = (props) => {
   const removeItemHandler = (id) => {
     const email = localStorage.getItem("email");
     fetch(
-      `https://crudcrud.com/api/1021f448eee94cd6a08d3665296f461f/${email}/${id}`,
+      `https://crudcrud.com/api/76fec3acf22b4ed1804e0e1b4ddb6966/${email}/${id}`,
       {
         method: "DELETE",
         headers: {
